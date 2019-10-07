@@ -1,0 +1,11 @@
+/var/ton-work/log/*
+{
+  rotate 5
+  daily
+  copytruncate
+  missingok
+  notifempty
+  compress
+  delaycompress
+  sharedscripts
+}

@@ -1,0 +1,20 @@
+[Unit]
+Description=TON full node daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/validator-engine \
+  --global-config /var/ton-work/etc/ton-global.config.json \
+  --logname /var/ton-work/log/log 
+  --db /var/ton-work/db/ \
+Type=forking
+PIDFile=/run/ton/ton.pid
+Restart=on-failure
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
+PrivateDevices=true
+MemoryDenyWriteExecute=true
+
+[Install]
+WantedBy=multi-user.target
