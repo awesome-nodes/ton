@@ -3,16 +3,31 @@
 Telegram Open Network (TON) is a next-generation blockchain and communication platform developed by the founders of the popular messenger Telegram
 
 Official testnet site is: https://test.ton.org
-### System requirements
+### System requirements for TON full node
 
-| Resource | Minimal option | Recommended option     |
-|----------|----------------|------------------------|
-| Memory   | 4 GBytes _*_   | 8 GBytes and more      |
-| CPU      | 2 Cores        | 8 Cores                |
-| Disk     | 3-5 GByte  s   | per day for the Testnet|
-| Type     | HDD            | SSD or RAID            |
+Testnet:
+
+| Resource | Minimal option   | Recommended option |
+|----------|------------------|--------------------|
+| Memory   | 4 GB _*_         | 8 GB and more      | 
+| CPU      | 2 Cores          | 8 Cores            |
+| Disk     | 3-5 GB per day   | for the Testnet    |
+| Type     | HDD              | SSD or RAID        |
+| Network  | 20 Mbps Up/Down  | 100 Mbps Up/Down   |
 
 _*_ Compilation may not pass with 2 GBytes of RAM
+
+Mainnet: (based on the official How-To)
+
+| Resource | Minimal option   | Recommended option      |
+|----------|------------------|-------------------------|
+| Memory   | 256 MB           | 8 GBytes and more       | 
+| CPU      | 2 CPU x 8 Cores  | 16 Cores and more       |
+| Disk     | _*_              | 512 GB SSD for hot data |
+| Disk     | _*_              | 8 TB HDD for archive    |
+| Network  | 100 Mbps Up/Down | 1 Gbps Up/Down          |
+
+_*_ There is no estimation before the Mainnet launch 
 
 ### Contents
 - [Deployment in Ubuntu 18.04](#ubuntu-18.04)
