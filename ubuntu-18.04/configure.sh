@@ -6,7 +6,9 @@ wget -qO /var/ton-work/etc/ton-global.config.json \
   https://test.ton.org/ton-global.config.json
 
 echo "==> Create initial configuration"
-IPADDR=$(hostname -I | awk '{print $1}') && IPPORT=6305
+# IPADDR=$(hostname -I | awk '{print $1}') && IPPORT=6305
+# Find a public IP address instead of the local for AWS compatability
+IPADDR=$(curl -s ifconfig.co | awk '{print $1}') && IPPORT=6503
 /usr/local/bin/validator-engine -C /var/ton-work/etc/ton-global.config.json \
   --db /var/ton-work/db/ \
   --ip ${IPADDR}:${IPPORT}
