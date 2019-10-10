@@ -11,9 +11,8 @@ Testnet:
 |----------|------------------|--------------------|
 | Memory   | 4 GB _*_         | 8 GB and more      | 
 | CPU      | 2 Cores          | 8 Cores            |
-| Disk     | 3-5 GB per day   | for the Testnet    |
-| Type     | HDD              | SSD or RAID        |
-| Network  | 20 Mbps Up/Down  | 100 Mbps Up/Down   |
+| Disk     | 3-5 GB SSD daily | for the Testnet    |
+| Network  | 50 Mbps Up/Down  | 100 Mbps Up/Down   |
 
 _*_ Compilation may not pass with 2 GBytes of RAM
 
