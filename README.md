@@ -35,16 +35,32 @@ _*_ There is no estimation before the Mainnet launch
 ## Deployment in Ubuntu 18.04
 This recipe can be used for direct deployment in Ubuntu, creating Docker images and Packer images for a Full Node
 
-* [./ubuntu-18.04/build.sh](ubuntu-18.04/build.sh) - Update system and build code
-* [./ubuntu-18.04/configure.sh](ubuntu-18.04/configure.sh) - Generate initial config
+* [ubuntu-18.04/build.sh](ubuntu-18.04/build.sh) - Update system and build code
+* [ubuntu-18.04/configure.sh](ubuntu-18.04/configure.sh) - Generate initial config
+* [ubuntu-18.04/startup.sh](ubuntu-18.04/startup.sh) - Enable systemd autostart and log rotate feature 
 
-You may run full install with the folowing bash commands.
-Assumed root priveleges for creating directories (`sudo -i`)
+
+### Full automatic install
+Root priveleges required for creating directories and update system configs (`sudo -i`)
+
 ```bash
 wget -O - https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/build.sh | bash
 wget -O - https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/configure.sh | bash
+wget -O - https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/startup.sh | bash
 ```
-After a successful install, you may start node like this:
+### Rebuild
+For rebuild it is reccommended to stop services, remove src directory and run build step agan
+```bash
+cd ~
+wget -O build.sh https://raw.githubusercontent.com/awesome-nodes/ton/master/ubuntu-18.04/build.sh
+chmod +x build.sh
+rm -rf ton
+systemctl stop ton.service
+./build.sh
+systemctl start ton.service
+```
+### Manual start
+You may start node manualy like this:
 ```bash
 validator-engine -C /var/ton-work/etc/ton-global.config.json --db /var/ton-work/db/ -l /var/ton-work/log/log -t 2
 ```
