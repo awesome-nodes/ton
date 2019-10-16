@@ -62,7 +62,7 @@ systemctl start ton.service
 ### Manual start
 You may start node manualy like this:
 ```bash
-validator-engine -C /var/ton-work/etc/ton-global.config.json --db /var/ton-work/db/ -l /var/ton-work/log/log -t 2
+validator-engine -C /var/ton-work/etc/ton-global.config.json --db /var/ton-work/db/ -l /var/log/ton/log -t 2
 ```
 where `-t x` means number of the threads for a multicore configuration. Default value is 8.
 
