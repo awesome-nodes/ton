@@ -1,6 +1,6 @@
-/var/ton-work/log/*
+/var/log/ton/*
 {
-  rotate 5
+  rotate 7
   daily
   copytruncate
   missingok

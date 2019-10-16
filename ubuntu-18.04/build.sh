@@ -40,4 +40,4 @@ cp /root/ton/build/utils/generate-random-id ${INSTALL_DIR}
 echo "==> Create data directories"
 [ ! -d "/var/ton-work/db" ] && mkdir -p "/var/ton-work/db"
 [ ! -d "/var/ton-work/etc" ] && mkdir "/var/ton-work/etc"
-[ ! -d "/var/ton-work/log" ] && mkdir "/var/ton-work/log"
+[ ! -d "/var/ton-work/log" ] && mkdir "/var/log/ton"
